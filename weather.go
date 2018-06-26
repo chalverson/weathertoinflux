@@ -83,7 +83,6 @@ func main() {
 				continue
 			}
 
-			fmt.Printf("Lat: %v Lon: %v\n", lat, lon)
 			err = w.CurrentByCoordinates(&owm.Coordinates{
 				Latitude:  lat,
 				Longitude: lon,
