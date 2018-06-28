@@ -68,7 +68,11 @@ func main() {
 				log.Printf("Could not parse city id int: %v\n", city["id"])
 				continue
 			}
-			w.CurrentByID(cityId)
+			err = w.CurrentByID(cityId)
+			if err != nil {
+				log.Printf("Error getting CurrentBy ID for ID: [%v] Error: %v\n", cityId, err)
+				continue
+			}
 		}
 
 		if city["type"] == "latlon" {
